@@ -4,7 +4,8 @@ import ContextVariales from '../../context/contextVariables'
 
 const Vehicle = ({open}) => {
     const {setOpenRide} = useContext(ContextVariales)
-    const openMe = () => {
+    const openMe = (e) => {
+        e.preventDefault()
         setOpenRide(true)
     }
 
