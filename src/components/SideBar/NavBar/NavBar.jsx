@@ -22,25 +22,25 @@ const NavBar = () => {
                     </button>
                 </li>
                 <li>
-                    <button className="al-c" onClick={()=>navigate("/loggedIn/employees")}>
+                    <button className="al-c" onClick={()=>navigate("/employees")}>
                         <i className='bx bxs-user' ></i>
                         Employees
                     </button>
                 </li>
                 <li>
-                    <button className="al-c" onClick={()=>navigate("/loggedIn/drivers")}>
+                    <button className="al-c" onClick={()=>navigate("/drivers")}>
                         <i className='bx bx-id-card'></i>
                         Drivers
                     </button>
                 </li>
                 <li>
-                    <button className="al-c" onClick={()=>navigate("/loggedIn/vehicles")}>
+                    <button className="al-c" onClick={()=>navigate("/vehicles")}>
                         <i className='bx bxs-bus-school' ></i>
                         Vehicles
                     </button>
                 </li>
                 <li>
-                    <button className="al-c" onClick={()=>navigate("/loggedIn/station")}>
+                    <button className="al-c" onClick={()=>navigate("/station")}>
                         <i className='bx bxs-car-garage' ></i>
                         Station
                     </button>

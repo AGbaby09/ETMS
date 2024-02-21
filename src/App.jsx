@@ -14,8 +14,8 @@ function App() {
       <main className={`App scrollable`} style={{height: window.innerHeight, width: window.innerWidth}}>
         {openRide && <AccRide />}
         <Routes>
-          <Route path='/' element={<Login />}/>
-          <Route path='/loggedIn/*' element={<LoggedIn />}/>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/*' element={<LoggedIn />}/>
         </Routes>
       </main>
     </BrowserRouter>
