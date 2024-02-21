@@ -1,0 +1,166 @@
+section#login{
+    position: absolute;
+}
+#form{
+    z-index: 19;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    background: rgb(128, 128, 128, 0.4);
+    position:absolute;
+}
+@keyframes scaleForm {
+    from{transform: scale(0.9);}
+    to{transform: scale(1);}
+}
+.hideForm{display: none;}
+.showForm{display: grid;}
+
+#loading{
+    width: 50%;
+    margin: 5% 25% 0;
+    display: grid;
+}
+#loading>lord-icon{
+    margin: auto;
+    width: 5vh;
+    height: 5vh;
+}
+
+#form>#error{
+    position: absolute;
+    background: rgb(203, 160, 160);
+    box-shadow: 0 0 10px 1px rgba(255, 0, 0, 0.396);
+    width: 25%;
+    border-radius: 10px;
+    padding: 1%;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.4vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: error 10ms ease;
+}
+#form>#error i{
+    color: red;
+    font-size: 3vh;
+}
+
+@keyframes error {
+    from{top: 3%;}
+    to{top: 5%;}
+}
+
+#form>form{
+    position: relative;
+    margin: auto;
+    width: 25%;
+    height: auto;
+    padding: 2.5% 0;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    animation: scaleForm 500ms ease;
+}
+#form>form>p{
+    font-size: 1.5vh;
+    text-align: center;
+}#form>form>p>button{
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: purple;
+    font-size: 1.6vh;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+}
+#peekaboo{
+    position: absolute;
+    right: 5%;
+    top: 60%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 3vh;
+}
+#form>form>.close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vh;
+    color: black;
+}
+#form>form>h3{
+    margin: 5% 0 0;
+    text-align: center;
+    font-size: 2vh;
+}
+#form>form>label{
+    position: relative;
+    margin: 2.5% 10% 0%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5vh;
+}
+#form>form>label>input{
+    margin: 2.5% 0;
+    width: 100%;
+    height: 100%;
+    padding: 5% 5%;
+    font-family: "Poppins", sans-serif;
+    border-radius: 10px;
+    font-size: 1.5vh;
+    border:none;
+    outline: none;
+    background: #ddd;
+}
+#form>form>button{
+    width: 80%;
+    padding: 3% 0;
+    border-radius: 10px;
+    margin: 5% 10%;
+    cursor: pointer;
+    border: none;
+    background-color: #333;
+    color: silver;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.7vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+
+    #form>#error{
+        top: 20%;
+        width: 80%;
+        height: 5%;
+    }
+
+    @keyframes error {
+        from{top: 15%;}
+        to{top: 20%;}
+    }
+
+    #form>form{
+        width: 90%;
+    }
+
+
+}

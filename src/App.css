@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+/* font-family: Agbalumo; */
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+/* font-family: 'Sacramento', cursive; */
+
+main.App{
+  position: relative;
+  overflow-y: scroll;
+  /* border: 5px solid red; */
+}
+
+main.App.light{
+  background: #fff;
+  color: #333;
+}
+main.App.light p{
+  background: #fff;
+  color: #333a;
+}
+main.App.light button{
+  background: #fff;
+  color: #333;
+  box-shadow: 0 0 2px 1px #ddd;
+}
+main.App.light .options>button{
+  background-color: #aaaaaa50;
+  color: #333;
+  box-shadow: 0 0 2px 1px #ddd;
+}
+main.App.dark{
+  background: #333;
+  color: #fff;
+}
+main.App.dark button{
+  background: #333;
+  color: #fff;
+  box-shadow: 0 0 4px 1px #ddd;
+}
+
+a{text-decoration: none; color: grey;transition: 100ms ease;}
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spBtn{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.spEven{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+img.full{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.empty{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3vh;
+}
+button{
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+.modal{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  z-index: 50;
+  display: grid;
+}
+.hide{
+  display: none;
+}
+.scrollable{
+  overflow-y: scroll;
+}
+.scrollable::-webkit-scrollbar {
+  width: 0.5vw;               
+  height: 10vh;               
+  border-radius: 10px;    
+  padding-right: 0 2vw;  
+}
+.scrollable::-webkit-scrollbar-track {
+  background: transparent;        
+}
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: #333;    
+  border-radius: 20px;      
+  border: 3px solid #333;  
+}
+.close{
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  width: 4vh;
+  height: 4vh;
+  border-radius: 50%;
+  background: #ddda;
+  color: #333a;
+  font-size: 3.5vh;
+  display: grid;
+  place-content: center;
+  border: none;
+  transition: 500ms ease;
+}
+.close:hover{
+  color: #333;
+}
+
+.contact{
+  position: fixed;
+  top:0;
+  z-index: 15;
+  width: 100vw;
+  height: 100%;
+  background-color: #333b;
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(5px);
+}
+.contact>form{
+  background: white;
+  border-radius: 15px;
+  animation: grow 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes grow {
+  from{transform: scale(0.8);}
+  to{transform: scale(1);}
+}
+
+
+.table{
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 100%;
+  padding: 1% 0;
+  font-family: 'Poppins', sans-serif;
+}
+.table>.thead{
+  /* border: 1px solid teal; */
+  width: 95%;
+  height: 10%;
+  margin: 0 2.5%;
+  background-color: #333;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.table>.thead>.tr{
+  height: 100%;
+  padding: 0 0 0 1%;
+  display: flex;
+  align-items: center;
+}
+.table>.thead>.tr>.th{
+  margin: 0 auto;
+}
+.table>.thead>.tr>.th>p{color: white;font-weight: 700;font-size: 1.7vh;}
+
+.table>.tbody{
+  width: 100%;
+  height: 90%;
+  /* overflow: hidden; */
+}
+.table>.tbody>.tr{
+  background-color: #b6b6b651;
+  width: 95%;
+  height: 5vh;
+  margin: 0.5% 2.5%;
+  border-radius: 7.5px;
+  padding: 0 0 0 1%;
+  display: flex;
+  align-items: center;
+}
+.table>.tbody>.tr>.td{
+  /* border: 1px solid green; */
+  margin: 0 auto;
+}
+.table>.tbody>.tr>.td>p{color: #333;font-size: 1.7vh;font-weight: 500;}
+.col1{
+  width: 10%;
+}
+.col2{
+  width: 10%;
+}
+.col3{
+  width: 10%;
+}
+.col4{
+  width: 15%;
+}
+.col5{
+  width:25%;
+}
+.col6{
+  width: 10%;
+}
+.col7{
+  width: 10%;
+}

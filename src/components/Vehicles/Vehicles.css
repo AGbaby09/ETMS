@@ -1,0 +1,22 @@
+#Vehicles{
+    width: 100%;
+    height: 100%;
+}
+#head{
+    height: 10%;
+    width: 100%;
+    display: flex;
+}
+#head h3{
+    margin-left: 5%;
+}
+#head button{
+    width: 20%;
+    height: 60%;
+    border-radius: 10px;
+    margin-right: 5%;
+    font-size: 1.7vh;
+}
+#head button i{
+    font-size: 3vh;
+}

@@ -1,0 +1,156 @@
+.FillForm{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.FillForm form{
+    width: 70%;
+    height: 100%;
+}
+
+.FillForm form h3.title{
+    font-size: 2.2vh;
+    text-align: center;
+    width: 100%;
+    height: 15%;
+    /* background-color: red; */
+}
+.FillForm form .form-group{
+    position: relative;
+    /* background-color: #333; */
+    width: 100%;
+    height: 85%;
+}
+.FillForm form .form-group .form-row{
+    /* background: teal; */
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.FillForm form .form-group .form-row form-set{
+    width: 30%;
+    height: 80%;
+    /* background-color: goldenrod; */
+    display: flex;
+    flex-direction: column;
+}
+.FillForm form .form-group .form-row form-set label{
+    width: 80%;
+    margin: 0 10%;
+    display: flex;
+    align-items: center;
+    height: 40%;
+    font-size: 1.5vh;
+    font-family: 'Poppins', sans-serif;
+}
+.FillForm form .form-group .form-row form-set input{
+    width: 80%;
+    margin: 0 10%;
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 60%;
+}
+.FillForm form .form-group button{
+    background: #333;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    width: 50%;
+    height: 17.5%;
+    border-radius: 10px;
+    margin: 3% 25% 0;
+}
+.FillForm .preview{
+    border: none;
+    width: 30%;
+    height: 100%;
+}
+.FillForm .preview img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0px 0px 4px #333);
+}
+
+#allEmployees, #allDrivers{
+    width: 100%;
+    height: 60%;
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between; */
+}
+#allVehicles{
+    /* background-color: rgba(255, 0, 0, 0.167); */
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+}
+#allVehicles h3{
+    width: 100%;
+    height: 10%;
+    /* background-color: gold; */
+}
+#allVehicles .all-v{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1%;
+}
+.Vehicle{
+    box-shadow: -1px 3px 3px 1px #aaa, inset 0 0 5px 1px #ddd;
+    width: 90%;
+    height: 12.5vh;
+    border-radius: 20px;
+    margin: 5%;
+    cursor: pointer;
+}
+.Vehicle .side{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.side.top{
+    width: 90%;
+    height: 60%;
+    margin: 0 5%;
+}
+.side.top h3{
+    font-size: 2.5vh;
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+}
+.side.top p{
+    font-size: 1.8vh;
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+}
+.side.bottom{
+    width: 90%;
+    height: 40%;
+    margin: 0 5%;
+}
+.side.bottom h3{
+    font-size: 1.4vh;
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+}
+.side.bottom p{
+    font-size: 1.6vh;
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+}
