@@ -54,7 +54,7 @@ const NavBar = () => {
                         Station
                     </button>
                 </li>}
-                {auth?.role !== 212 && <li>
+                {auth?.role === 121 && <li>
                     <button className="al-c" onClick={()=>navigate("/loggedIn/history")}>
                         <i className='bx bx-history' ></i>
                         History
