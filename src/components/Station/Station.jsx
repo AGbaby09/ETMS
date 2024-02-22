@@ -13,11 +13,40 @@ const Station = () => {
 
                 <button className='center' onClick={()=>{setSelectTime(!selectTime)}}>Select Time <i className="bx bx-chevron-down"></i></button>
             </div>
-            {selectTime && <div className="times">
-                <Time time={'9:00AM - 11:00AM'}/>
+            {selectTime && <div className="times scrollable">
+                <Time time={'2:00AM'}/>
+                <Time time={'3:00AM'}/>
+                <Time time={'4:00AM'}/>
+                <Time time={'7:00AM'}/>
+                <Time time={'8:00AM'}/>
+                <Time time={'9:00AM'}/>
+                <Time time={'12:00PM'}/>
+                <Time time={'1:00PM'}/>
+                <Time time={'2:00PM'}/>
+                <Time time={'5:00PM'}/>
+                <Time time={'6:00PM'}/>
+                <Time time={'7:00PM'}/>
             </div>}
 
             <div id="rides" className='scrollable'>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
+                <Vehicle open={true}/>
                 <Vehicle open={true}/>
                 <Vehicle open={true}/>
                 <Vehicle open={true}/>

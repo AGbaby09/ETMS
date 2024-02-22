@@ -1,14 +1,23 @@
 import axios from "axios";
-import { useState, useContext } from "react";
-// import AuthContext from "../../context/AuthProvider";
+import { useState, useContext, useEffect } from "react";
+import AuthContext from "../../context/AuthProvider";
 import "./Login.css"
-// import ContextVariables from "../../context/contextVariables";
+import { useNavigate } from "react-router-dom";
+import ContextVariables from "../../context/contextVariables";
 
 
 const Login = () => {
 
-    // const {variables, callLogin, setCallLogin, setCallSignUp} = useContext(ContextVariables)
-    // const {setAuth} = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    const {domain, role} = useContext(ContextVariables)
+    const {setAuth, auth} = useContext(AuthContext)
+
+    useEffect(()=>{
+        if(auth?.token){
+            navigate('/loggedIn')
+        }
+    }, [auth])
     
     const [peek, setPeek] = useState(false)
 
@@ -29,14 +38,13 @@ const Login = () => {
         e.preventDefault();
         setIsLoading(true)
 
-        await axios.post(`${variables.domain}/api/v1/customer/login`, {email, password})
+        await axios.post(`${domain}/api/v1/${role === 121 ? 'employee' : role === 212 ? 'driver' : 'admin'}/login`, {email, password})
         .then(res => {
             setIsLoading(false)
             emptyFields()
             if(res.data){
-                localStorage.setItem("kromCustomer", JSON.stringify(res.data))
-                // setAuth(res.data)
-                setCallLogin(false)
+                localStorage.setItem("kromTroski", JSON.stringify(res.data))
+                setAuth(res.data)
             }
         })
         .catch(err => {
@@ -64,9 +72,9 @@ const Login = () => {
             }
 
             <form onSubmit={handleSubmit}>
-                <button className="close" onClick={(e)=>{e.preventDefault(); setCallLogin(false); emptyFields()}}>
+                {/* <button className="close" onClick={(e)=>{e.preventDefault(); setCallLogin(false); emptyFields()}}>
                     <i className="bx bx-x"></i>
-                </button>
+                </button> */}
                 <h3>Log into your account</h3>
                 <label>Email <input 
                         id="email"
@@ -111,7 +119,7 @@ const Login = () => {
                     <button type="submit">LOGIN</button>
                 )}
                 
-                <p>Don't have an account? <button onClick={(e)=>{ e.preventDefault();setCallLogin(false);setCallSignUp(true); emptyFields()}}>Sign up</button></p>
+                <p>Don't have an account? <button onClick={(e)=>{ e.preventDefault();navigate('/signup'); emptyFields()}}>Sign up</button></p>
             </form>
         </section>
     );

@@ -21,7 +21,7 @@
 }
 #form>form{
     margin: auto;
-    background: rgb(51, 51, 51, 0.8);
+    background: rgb(128, 128, 128, 0.4);
     width: 20%;
     border-radius: 10px;
     animation: scaleForm 500ms ease;

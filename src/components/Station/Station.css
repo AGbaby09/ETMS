@@ -70,6 +70,16 @@
     width: 100%;
     font-size: 5vh;
   }
+
+  .modali form .details p{
+    font-size: 1.7vh;
+    text-align: center;
+    margin: 0 0 5%;
+  }
+
+  .modali form .details p span{
+    font-weight: 600;
+  }
   .modali form .buttons{
     width: 100%;
     /* border: 1px solid red; */
