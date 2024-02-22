@@ -1,0 +1,15 @@
+Manages user authentication by sending a POST request to a specified endpoint (/api/v1/{role}/login) with the user's email and password.
+Uses Axios for making HTTP requests.
+Utilizes React hooks such as useState, useContext, and useEffect for managing state and side effects.
+Redirects the user to the /loggedIn route if they are already authenticated (i.e., if auth.token exists).
+Displays an error message if authentication fails.
+Provides an option to toggle password visibility.
+Handles form submission and loading state while waiting for the server response.
+
+The appearance is defined by the JSX returned by the component.
+It consists of a <section> element with the id form, which likely encapsulates the entire login form.
+The form includes input fields for email and password, along with a button for submitting the form.
+There's a link/button for forgotten passwords and another button for signing up.
+Additionally, there's an animated loading icon displayed while waiting for the server response.
+
+Overall, the Login component provides a user-friendly interface for users to input their credentials, handles authentication requests, and provides feedback to the user based on the server response.

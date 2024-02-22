@@ -1,0 +1,13 @@
+Manages user registration by sending a POST request to a specified endpoint (/api/v1/employee/register) with the user's registration details.
+Uses Axios for making HTTP requests.
+Utilizes React hooks such as useState, useContext, and useEffect for managing state and side effects.
+Redirects the user to the /loggedIn route if they are already authenticated (i.e., if auth.token exists).
+Provides an option to toggle password visibility.
+Handles form submission and loading state while waiting for the server response.
+
+The appearance is defined by the JSX returned by the component.
+It consists of a <section> element with the id form, which likely encapsulates the entire sign-up form.
+The form includes input fields for full name, email, branch, password, and confirm password, along with a button for submitting the form.
+There's a link/button for users who already have an account to navigate to the login page.
+
+Overall, the Signup component provides a user-friendly interface for users to register with the application, handles registration requests, and provides feedback to the user based on the server response.
