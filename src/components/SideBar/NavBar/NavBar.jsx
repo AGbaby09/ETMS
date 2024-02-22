@@ -6,7 +6,7 @@ import "./NavBar.css";
 
 const NavBar = () => {
     const navigate = useNavigate()
-    const {auth} = useContext(AuthContext)
+    const {auth, setAuth} = useContext(AuthContext)
 
     const logout = async () => {
         localStorage.removeItem('kromTroski');
