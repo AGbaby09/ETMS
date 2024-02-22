@@ -16,12 +16,13 @@ const Signup = () => {
         }
     }, [auth])
 
-    const {setCallLogin, setCallSignUp, role, domain} = useContext(ContextVariales)
+    const { domain} = useContext(ContextVariales)
     const [isLoading, setIsLoading] = useState(false)
 
     const [peek, setPeek] = useState(false)
     const [fullname, setFullname] = useState("");
     const [email, setEmail] = useState("");
+    const [contact, setcontact] = useState("");
     const [password, setPassword] = useState("");
     const [branch, setBranch] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -29,18 +30,19 @@ const Signup = () => {
         setFullname("")
         setEmail("")
         setPassword("")
+        setcontact("")
         setConfirmPassword("")
     }
-
-    const handleSubmit = (e) => {
+    const role = 121;
+    const handleSubmit = async (e) => {
         e.preventDefault()
         setIsLoading(true)
         
 
         if(confirmPassword === password){
-            if (role && fullname && email && password){
-                axios.post(`${domain}/api/v1/employee/register`, {email, fullname, password, role, branch})
-                .then(result => {console.log('success:', result);setIsLoading(false)})
+            if (role && fullname && email && password && branch && contact){
+                await axios.post(`${domain}/api/v1/employee/register`, {email: email, fullname: fullname, password: password, role: role, branch:branch, contact: contact})
+                .then(result => {console.log('success:', result);setIsLoading(false);navigate('/')})
                 .catch(error => {console.log(error);setIsLoading(false);emptyFields()})
             }
             else{
@@ -60,7 +62,7 @@ const Signup = () => {
                     <i className="bx bx-x"></i>
                 </button> */}
 
-                <h3>Log into your account</h3>
+                <h3>Create your account</h3>
 
                 <label>Full name <input 
                         id="fullname"
@@ -77,10 +79,21 @@ const Signup = () => {
                         id="email"
                         name="email"
                         type="email" 
-                        autoComplete="on"
+                        autoComplete="off"
                         placeholder="example@domain.com"
                         onChange={(e) => {setEmail(e.target.value);}}
                         value={email}
+                    />
+                </label>
+                
+                <label>Contact <input 
+                        id="contact"
+                        name="contact"
+                        type="text" 
+                        autoComplete="off"
+                        placeholder="1234567890"
+                        onChange={(e) => {setcontact(e.target.value);}}
+                        value={contact}
                     />
                 </label>
 
@@ -88,7 +101,7 @@ const Signup = () => {
                         id="branch"
                         name="branch"
                         type="text" 
-                        autoComplete="on"
+                        autoComplete="off"
                         placeholder="Branch name"
                         onChange={(e) => {setBranch(e.target.value);}}
                         value={branch}

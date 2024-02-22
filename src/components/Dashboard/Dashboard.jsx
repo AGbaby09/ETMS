@@ -18,6 +18,8 @@ const Dashboard = () => {
         }
     }, [auth])
 
+    
+
     defaults.maintainAspectRatio = false;
     defaults.responsive = true;
 
