@@ -1,5 +1,0 @@
-The App component doesn't directly handle visual rendering, but it does define the structure of the application's layout.
-It likely renders a main content area represented by the <main> element with a class of App scrollable.
-The appearance of the application would depend on the components rendered within each route defined by React Router.
-Components such as ToggleLogin, Login, SignUp, and LoggedIn would likely contain forms, login/signup interfaces, and user dashboard elements.
-If openRide is true, the AccRide component would be rendered, which could represent a section or modal related to accessing a ride or similar feature but what it mainly does it show a modal to book
