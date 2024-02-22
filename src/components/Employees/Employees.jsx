@@ -17,7 +17,7 @@ const Employees = () => {
 
     useEffect(()=>{
         if(!auth?.token){
-            navigate('/login')
+            navigate('/')
         }
     }, [auth])
 

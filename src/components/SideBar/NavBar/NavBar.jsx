@@ -7,6 +7,13 @@ import "./NavBar.css";
 const NavBar = () => {
     const navigate = useNavigate()
     const {auth} = useContext(AuthContext)
+
+    const logout = async () => {
+        localStorage.removeItem('kromTroski');
+        setAuth({})
+        navigate('/')
+    } 
+
     return (  
         <nav id="SideBar">
             <div id="avatar">
@@ -55,7 +62,7 @@ const NavBar = () => {
                         <i class='bx bxs-user-circle'></i>
                         Profile
                     </button>
-                    <button className="setPro">
+                    <button className="setPro" onClick={logout}>
                         <i class='bx bx-exit'></i>
                         Logout
                     </button>

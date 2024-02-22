@@ -5,25 +5,40 @@
 
 #Dashboard .row{
     width: 100%;
-    border: 3px solid red;
+    /* border: 3px solid red; */
 }
 #Dashboard .row1{
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
 }
 #count{
     width: 30%;
     height: 100%;
-    border: 1px solid teal;
-    padding: 1.5% 0;
+    /* border: 1px solid teal; */
+    padding: 2% 0;
 }
-
+#count h3{
+    font-size: 1.7vh;
+    padding: 2% 5%;
+    width: 100%;
+}
+#count h1{
+    font-size: 5vh;
+    padding: 0 5%;
+}
 .slab{
     height: 15%;
     width: 80%;
     border-radius: 10px;
     box-shadow: -3px 5px 15px 1px #aaaaaa77;
-    margin: 0 10% 5%;
+    margin: 0 10% 10%;
+    background: linear-gradient( to bottom right,rgba(62, 60, 60, 0.65), rgba(50, 49, 49, 0.8), rgb(36, 35, 35))
+}
+.slab h3{
+    color: white;
 }
 .slabPie{
     height: 40%;
@@ -31,4 +46,41 @@
     border-radius: 10px;
     box-shadow: -3px 5px 15px 1px #aaaaaa77;
     margin: 0 10%;
+}
+.slabPie h3{
+    color: #666;
+    height: 10%;
+}
+#graph{
+    /* border: 1px solid red; */
+    width: 70%;
+    height: 100%;
+}
+.bar{
+    /* border: 2px solid gold; */
+    margin-top: 2%;
+    width: 100%;
+    height: 50%;
+}
+.barchart{
+    height: 95%;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: -3px 5px 15px 1px #aaaaaa77;
+    margin: auto 0%;
+    /* background: linear-gradient( to bottom right,rgba(62, 60, 60, 0.65), rgba(50, 49, 49, 0.8), #242323) */
+}
+.barchart h3{
+    width: 100%;
+    font-size: 1.9vh;
+    color: #666;
+    padding: 0% 5%;
+    height: 10%;
+    /* background: red; */
+    display: flex;
+    align-items: center;
+}
+.chart{
+    width: 100%;
+    height: 90%;
 }
