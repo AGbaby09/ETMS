@@ -49,7 +49,7 @@ const Drivers = () => {
                                 <input type="file" />
                             </form-set>
                         </div>
-                        <button type="submit">Register</button>
+                        <button type="submit" disabled>Register</button>
                     </div>
                 </form>
                 <div className="preview">
