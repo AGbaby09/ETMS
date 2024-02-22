@@ -28,7 +28,7 @@ const ToggleLogin = () => {
                 <div className="logins">
                     <button onClick={()=>{navigate('/login'); setRole(911)}}>Login as Admin</button>
                     <button onClick={()=>{navigate('/login'); setRole(121)}}>Login as Employee</button>
-                    <button onClick={()=>{navigate('/login'); setRole(212)}}>Login as Driver</button>
+                    {/* <button onClick={()=>{navigate('/login'); setRole(212)}}>Login as Driver</button> */}
                 </div>
             </div>
         </section>
