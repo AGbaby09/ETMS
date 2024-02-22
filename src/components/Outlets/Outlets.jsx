@@ -5,6 +5,8 @@ import Drivers from '../Drivers/Drivers'
 import Vehicles from '../Vehicles/Vehicles'
 import Station from '../Station/Station';
 import Dashboard from '../Dashboard/Dashboard';
+import History from '../History/History';
+import Profile from '../Profile/Profile';
 
 const Outlets = () => {
 
@@ -16,6 +18,8 @@ const Outlets = () => {
                 <Route path='/drivers' element={<Drivers />} />
                 <Route path='/vehicles' element={<Vehicles />} />
                 <Route path='/station' element={<Station />} />
+                <Route path='/history' element={<History />} />
+                <Route path='/profile' element={<Profile />} />
             </Routes>
         </section>
     )
