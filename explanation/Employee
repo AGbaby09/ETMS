@@ -18,6 +18,7 @@ Styling:
 
 The appearance is further influenced by CSS styles defined in the accompanying Employees.css and FillForm.css files, which are imported at the top of the component file.
 The CSS likely defines styles for layout, positioning, typography, colors, and other visual aspects of the page.
+
 Overall, the Employees component provides functionality for managing employee data, including both registration of new employees and display of existing ones. It ensures that only authenticated users can access the page and fetches employee data from the server to populate the list.
 
 

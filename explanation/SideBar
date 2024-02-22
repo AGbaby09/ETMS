@@ -1,0 +1,17 @@
+This is a React component named NavBar, which appears to represent a navigation sidebar for the logged-in interface of the application. Here's a breakdown of what it does and how it might look:
+
+Manages user authentication by accessing the auth context from AuthContext.
+Utilizes React Router's useNavigate hook to handle navigation within the application.
+Provides a logout function that clears the user's authentication token from local storage, resets the authentication context, and navigates the user back to the login page.
+Renders navigation links based on the user's role. Certain links are conditional based on the user's role, showing different options for different roles.
+
+The appearance is defined by the JSX returned by the component.
+It consists of a <nav> element with the id SideBar, representing the sidebar navigation menu.
+Inside the navigation menu, it displays the user's avatar, email, and role.
+It includes a list of navigation links represented as buttons, each with an icon and text.
+
+Overall, the NavBar component provides a functional and visually appealing navigation menu for users accessing the logged-in interface of the application. It dynamically adjusts the available options based on the user's role, enhancing usability and security.
+
+
+
+

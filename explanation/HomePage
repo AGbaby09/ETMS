@@ -1,0 +1,13 @@
+The ToggleLogin component
+
+Manages user role selection for logging in.
+Uses React Router's useNavigate hook to handle navigation to different routes.
+Utilizes React hooks such as useState and useContext for managing state and accessing context variables.
+Animates the appearance of the component by adding a CSS class after a delay of 2000 milliseconds.
+
+The appearance is defined by the JSX returned by the component.
+It consists of a section with the id ToggleLogin, containing two main sections: homeTitle and toggleOptions.
+The homeTitle section likely represents the header or title of the page, displaying the application name, description, and an image of a bus.
+The toggleOptions section contains buttons for selecting different user roles for login (e.g., admin, employee).
+
+Overall, the ToggleLogin component provides a visually appealing and user-friendly interface for selecting a user role and navigating to the appropriate login page within the application.
