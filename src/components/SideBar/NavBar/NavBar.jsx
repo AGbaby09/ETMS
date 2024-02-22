@@ -20,7 +20,7 @@ const NavBar = () => {
                 <div className="image">
 
                 </div>
-                <h3>User Name</h3>
+                <h3>{auth?.email}</h3>
                 <p>{auth?.role === 121 ? 'Employee' : auth?.role === 212 ? 'Driver' : ''}</p>
             </div>
             <ul>
@@ -54,11 +54,17 @@ const NavBar = () => {
                         Station
                     </button>
                 </li>}
+                {auth?.role !== 212 && <li>
+                    <button className="al-c" onClick={()=>navigate("/loggedIn/history")}>
+                        <i className='bx bx-history' ></i>
+                        History
+                    </button>
+                </li>}
             </ul>
 
             <ul className="secUL">
                 <li>
-                    <button className="setPro">
+                    <button className="setPro" onClick={()=>navigate("/loggedIn/profile")}>
                         <i class='bx bxs-user-circle'></i>
                         Profile
                     </button>
