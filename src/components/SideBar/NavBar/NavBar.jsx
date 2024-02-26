@@ -21,7 +21,7 @@ const NavBar = () => {
 
                 </div>
                 <h3>{auth?.email}</h3>
-                <p>{auth?.role === 121 ? 'Employee' : auth?.role === 212 ? 'Driver' : ''}</p>
+                <p>{auth?.role === 121 ? 'Employee' : auth?.role === 212 ? 'Driver' : 'Admin'}</p>
             </div>
             <ul>
                 <li>
@@ -65,11 +65,11 @@ const NavBar = () => {
             <ul className="secUL">
                 <li>
                     <button className="setPro" onClick={()=>navigate("/loggedIn/profile")}>
-                        <i class='bx bxs-user-circle'></i>
+                        <i className='bx bxs-user-circle'></i>
                         Profile
                     </button>
                     <button className="setPro" onClick={logout}>
-                        <i class='bx bx-exit'></i>
+                        <i className='bx bx-exit'></i>
                         Logout
                     </button>
                 </li>
@@ -77,5 +77,6 @@ const NavBar = () => {
         </nav>
     );
 }
+
  
 export default NavBar;

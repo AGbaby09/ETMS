@@ -42,22 +42,22 @@ const Dashboard = () => {
                     <div className="slabPie">
                         <h3>Doughnut for Totals</h3>
                         <div className="chart">
-                        <Doughnut  
-                            data={{
-                                // labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                                labels: ['Employees', 'Drivers', 'Vehicles'],
-                                datasets: [
-                                    {
-                                        label: 'Count',
-                                        data: [1365, 65, 50],
-                                        backgroundColor : ['rgba(62, 60, 60, 0.65)','rgba(50, 49, 49, 0.8)','rgb(36, 35, 35)'],
-                                        borderRadius: 5,
-                                        boxShadow: '0 0 5px 10px red',
-                                        // fill:true,
-                                    },
-                                ],
-                            }}
-                        />
+                            <Doughnut  
+                                data={{
+                                    // labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                                    labels: ['Employees', 'Drivers', 'Vehicles'],
+                                    datasets: [
+                                        {
+                                            label: 'Count',
+                                            data: [1365, 65, 50],
+                                            backgroundColor : ['rgba(62, 60, 60, 0.65)','rgba(50, 49, 49, 0.8)','rgb(36, 35, 35)'],
+                                            borderRadius: 5,
+                                            boxShadow: '0 0 5px 10px red',
+                                            // fill:true,
+                                        },
+                                    ],
+                                }}
+                            />
                         </div>
                     </div>
                 </div>
@@ -66,31 +66,64 @@ const Dashboard = () => {
                         <div className="barchart">
                             <h3>Graph for rides</h3>
                             <div className="chart">
-                            <Bar 
-                            data={{
-                                labels: ['GV3025', 'GV6942', 'GV2815', 'GV1734', 'GV5611', 'GV4197','GV3025', 'GV6942', 'GV2815', 'GV1734', 'GV5611', 'GV4197'],
-                                datasets: [
-                                    {
-                                        label: 'Seat',
-                                        data: [30, 60, 20, 90, 10, 50, 57, 89, 53, 68, 13, 45],
-                                        backgroundColor : 'rgba(62, 60, 60, 0.65)',
-                                        borderRadius: 150,
-                                    },
-                                    {
-                                        label: 'Boarded',
-                                        data: [10, 26, 72, 59, 81, 95, 67, 99, 43,86, 33, 55],
-                                        backgroundColor : 'rgba(50, 49, 49, 0.8)',
-                                        borderRadius: 150,
-                                    },
-                                    {
-                                        label: 'Times of ride',
-                                        data: [36, 64, 42, 74, 60, 55, 87, 19, 43, 88, 31, 50],
-                                        backgroundColor : 'rgb(36, 35, 35)',
-                                        borderRadius: 150,
-                                    },
-                                ],
-                            }}
-                        />
+                                <Line 
+                                    data={{
+                                        labels: ['GV3025', 'GV6942', 'GV2815', 'GV1734', 'GV5611', 'GV4197','GV3025', 'GV6942', 'GV2815', 'GV1734', 'GV5611', 'GV4197'],
+                                        datasets: [
+                                            {
+                                                label: 'Seat',
+                                                data: [30, 60, 20, 90, 10, 50, 57, 89, 53, 68, 13, 45],
+                                                backgroundColor : 'rgba(62, 60, 60, 0.65)',
+                                                borderRadius: 150,
+                                            },
+                                            {
+                                                label: 'Boarded',
+                                                data: [10, 26, 72, 59, 81, 95, 67, 99, 43,86, 33, 55],
+                                                backgroundColor : 'rgba(50, 49, 49, 0.8)',
+                                                borderRadius: 150,
+                                            },
+                                            {
+                                                label: 'Times of ride',
+                                                data: [36, 64, 42, 74, 60, 55, 87, 19, 43, 88, 31, 50],
+                                                backgroundColor : 'rgb(36, 35, 35)',
+                                                borderRadius: 150,
+                                            },
+                                        ],
+                                    }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="line">
+                        <div className="linechart">
+                            <h3>Graph of something</h3>
+                            <div className="chart">
+                                {/* <Line /> */}
+                                <Bar 
+                                    data={{
+                                        labels: ['GV3025', 'GV6942', 'GV2815', 'GV1734', 'GV5611', 'GV4197','GV3025', 'GV6942', 'GV2815', 'GV1734', 'GV5611', 'GV4197'],
+                                        datasets: [
+                                            {
+                                                label: 'Seat',
+                                                data: [30, 60, 20, 90, 10, 50, 57, 89, 53, 68, 13, 45],
+                                                backgroundColor : 'rgba(62, 60, 60, 0.65)',
+                                                borderRadius: 150,
+                                            },
+                                            {
+                                                label: 'Boarded',
+                                                data: [10, 26, 72, 59, 81, 95, 67, 99, 43,86, 33, 55],
+                                                backgroundColor : 'rgba(50, 49, 49, 0.8)',
+                                                borderRadius: 150,
+                                            },
+                                            {
+                                                label: 'Times of ride',
+                                                data: [36, 64, 42, 74, 60, 55, 87, 19, 43, 88, 31, 50],
+                                                backgroundColor : 'rgb(36, 35, 35)',
+                                                borderRadius: 150,
+                                            },
+                                        ],
+                                    }}
+                                />
                             </div>
                         </div>
                     </div>

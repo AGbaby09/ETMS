@@ -37,8 +37,9 @@ const Drivers = () => {
         const fetchDrivers = async () => {
             try {
                 const response = await axios.get(`${domain}/api/v1/driver/fetchAll`);
-                if (response.data) {
-                    setDrivers(response.data);
+                if (response) {
+                    // console.log(response)
+                    setDrivers(response.data)
                 }
             } catch (error) {
                 console.log(error);
@@ -88,14 +89,14 @@ const Drivers = () => {
                                 <label>Branch</label>
                                 <input type="text" onChange={(e)=>{setBranch(e.target.value)}}/>
                             </form-set>
-                            {/* <form-set>
-                                <label>Destination</label>
-                                <input type="text" />
-                            </form-set> */}
-                            {/* <form-set>
-                                <label>Photo</label>
-                                <input type="file" />
-                            </form-set> */}
+                            <form-set>
+                                {/* <label>Destination</label>
+                                <input type="text" /> */}
+                            </form-set>
+                            <form-set>
+                                {/* <label>Photo</label>
+                                <input type="file" /> */}
+                            </form-set>
                         </div>
                         {isLoading ? <button type="submit" disabled>Registering</button> : <button type="submit" >Register</button>}
                     </div>

@@ -195,23 +195,30 @@ button{
 }
 .table>.tbody>.tr>.td>p{color: #333;font-size: 1.7vh;font-weight: 500;}
 .col1{
-  width: 10%;
+  /* width: 10%; */
+  width: auto;
 }
 .col2{
-  width: 10%;
+  /* width: 10%; */
+  width: auto;
 }
 .col3{
-  width: 10%;
+  /* width: 10%; */
+  width: auto;
 }
 .col4{
-  width: 15%;
+  /* width: 15%; */
+  width: auto;
 }
 .col5{
-  width:25%;
+  /* width:25%; */
+  width: auto;
 }
 .col6{
-  width: 10%;
+  /* width: 10%; */
+  width: auto;
 }
 .col7{
-  width: 10%;
+  /* width: 10%; */
+  width: auto;
 }

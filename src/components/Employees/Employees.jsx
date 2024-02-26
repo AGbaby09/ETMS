@@ -105,11 +105,14 @@ const Employees = () => {
                                 />
                             </form-set>
                             <form-set>
-                                <label>Photo</label>
+                                {/* <label>Photo</label>
                                 <input type="file"
                                     onChange={(e) => { setProfile(e.target.value); }}
                                     value={profile}
-                                />
+                                /> */}
+                            </form-set>
+                            <form-set>
+                                
                             </form-set>
                         </div>
                         {isLoading ? <button type="submit" disabled>Registering</button> : <button type="submit">Register</button>}
