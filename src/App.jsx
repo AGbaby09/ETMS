@@ -8,15 +8,17 @@ import ContextVariales from './context/contextVariables'
 import AccRide from './components/Station/AccRide'
 import ToggleLogin from './components/ToggleLogin/ToggleLogin'
 import OpenVehicle from './components/Vehicles/OpenVehicle'
+import CloseVehicle from './components/Vehicles/CloseVehicle'
 
 function App() {
-  const {openRide, openV} = useContext(ContextVariales)
+  const {openRide, openV, closeV} = useContext(ContextVariales)
 
   return (
     <BrowserRouter>
       <main className={`App scrollable`} style={{height: window.innerHeight, width: window.innerWidth}}>
         {openRide && <AccRide />}
         {openV && <OpenVehicle />}
+        {closeV && <CloseVehicle />}
         <Routes>
           <Route path='/' element={<ToggleLogin />}/>
           <Route path='/login' element={<Login />}/>

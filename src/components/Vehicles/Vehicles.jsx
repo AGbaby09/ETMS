@@ -17,7 +17,7 @@ const Vehicles = () => {
     const empty = () => {
         setBrand('')
         setPlate('')
-        setSeats(null)
+        setSeats(0)
     }
 
     const [allVehicles, setAllVehicles] = useState([])

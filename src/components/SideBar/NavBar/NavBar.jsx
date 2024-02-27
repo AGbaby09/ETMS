@@ -17,8 +17,8 @@ const NavBar = () => {
     return (  
         <nav id="SideBar">
             <div id="avatar">
-                <div className="image">
-
+                <div className="image center">
+                    <i className="bx bxs-camera"></i>
                 </div>
                 <h3>{auth?.email}</h3>
                 <p>{auth?.role === 121 ? 'Employee' : auth?.role === 212 ? 'Driver' : 'Admin'}</p>

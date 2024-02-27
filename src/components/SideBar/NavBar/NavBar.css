@@ -40,7 +40,11 @@ nav#SideBar{
    transform: translateX(-50%);
    border-radius: 50%;
    box-shadow: -1px 2px 3px 1px #ddd, inset 1px -2px 3px 1px #aaa;
-      }
+}
+.image i{
+   font-size: 5vh;
+   color: #666;
+}
 nav#SideBar ul{
    /* border: 1px solid red; */
    margin-top: 20%;

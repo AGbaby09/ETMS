@@ -29,6 +29,7 @@
     border-radius: 15px;
     display: flex;
     flex-direction: column;
+    animation: scaleForm 500ms ease;
 }
 #OpenVehicle form h1{
     /* border: 1px solid red; */
@@ -73,5 +74,45 @@
 }
 #OpenVehicle form .buttons button:nth-child(2){
     background-color: #333;
+    color: #fff;
+}
+
+#CloseVehicle form{
+    margin: auto;
+    background-color: white;
+    width: 20%;
+    height: 30%;
+    border-radius: 15px;
+    animation: scaleForm 500ms ease;
+}
+#CloseVehicle form p{
+    font-size: 1.5vh;
+    width: 80%;
+    margin: 0 10%;
+    height: 25%;
+}
+#CloseVehicle form h1{
+    font-size: 7vh;
+    height: 40%;
+    width: 80%;
+    margin: 0 10%;
+}
+#CloseVehicle form .buttons{
+    width: 80%;
+    margin: 5% 10% 0;
+    height: 17.5%;
+}
+#CloseVehicle form .buttons button{
+    width: 47.5%;
+    height: 100%;
+    border-radius: 10px;
+    font-size: 1.7vh;
+}
+#CloseVehicle form .buttons button:nth-child(1){
+    background-color: #ddd;
+    color: #333;
+}
+#CloseVehicle form .buttons button:nth-child(2){
+    background-color: #666;
     color: #fff;
 }
