@@ -33,7 +33,7 @@ export const ContextVarialesProvider = ({children}) => {
         }
 
         fetchAllCounts()
-    }, [])
+    }, [totalD, totalE, totalV])
     return (
         <ContextVariales.Provider value={{ 
             callReview, setCallReview, callTalk, setCallTalk, openRide, setOpenRide,
