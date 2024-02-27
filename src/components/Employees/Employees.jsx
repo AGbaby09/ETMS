@@ -35,7 +35,7 @@ const Employees = () => {
         if (!auth?.token) {
             navigate('/');
         }
-    }, [auth, navigate]);
+    }, [auth]);
 
     useEffect(() => {
         const fetchEmployees = async () => {
@@ -151,7 +151,7 @@ const Employees = () => {
                     </div>
                     <div className="tbody scrollable">
                         {employees.map((employee) => (
-                            <div className="tr al-c" key={employee.id}>
+                            <div className="tr al-c" key={employee._id}>
                                 <div className="td al-c col1">
                                     <p className="al-c">{employee.fullname}</p>
                                 </div>

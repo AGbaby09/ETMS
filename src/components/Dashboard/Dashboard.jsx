@@ -5,8 +5,10 @@ import {Bar, Doughnut, Line, Pie} from 'react-chartjs-2';
 import AuthContext from "../../context/AuthProvider";
 import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ContextVariales from '../../context/contextVariables';
 
 const Dashboard = () => {
+    const {totalE, totalD, totalV} = useContext(ContextVariales)
 
     const {auth} = useContext(AuthContext)
 
@@ -29,15 +31,15 @@ const Dashboard = () => {
                 <div id="count">
                     <div className="slab">
                         <h3>Total no. Employees</h3>
-                        <h1>1365</h1>
+                        <h1>{totalE}</h1>
                     </div>
                     <div className="slab">
                         <h3>Total no. Drivers</h3>
-                        <h1>65</h1>
+                        <h1>{totalD}</h1>
                     </div>
                     <div className="slab">
                         <h3>Total no. Vehicles</h3>
-                        <h1>15</h1>
+                        <h1>{totalV}</h1>
                     </div>
                     <div className="slabPie">
                         <h3>Doughnut for Totals</h3>
@@ -49,7 +51,7 @@ const Dashboard = () => {
                                     datasets: [
                                         {
                                             label: 'Count',
-                                            data: [1365, 65, 50],
+                                            data: [totalE, totalD, totalV],
                                             backgroundColor : ['rgba(62, 60, 60, 0.65)','rgba(50, 49, 49, 0.8)','rgb(36, 35, 35)'],
                                             borderRadius: 5,
                                             boxShadow: '0 0 5px 10px red',

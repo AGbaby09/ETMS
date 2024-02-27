@@ -12,7 +12,7 @@ const Vehicles = () => {
 
     const [brand, setBrand] = useState('')
     const [plate, setPlate] = useState('')
-    const [seats, setSeats] = useState(null)
+    const [seats, setSeats] = useState(0)
 
     const empty = () => {
         setBrand('')
@@ -105,7 +105,7 @@ const Vehicles = () => {
                 <h3 className='center'>All Vehicles</h3>
                 <div className='all-v scrollable'>
                     {allVehicles && allVehicles.map((vehicle)=>(
-                        <CreateVehicle vehicle={vehicle}/>
+                        <CreateVehicle key={vehicle._id} vehicle={vehicle}/>
                     ))}
                 </div>
             </div>            
