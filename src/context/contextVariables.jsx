@@ -5,8 +5,8 @@ const ContextVariales = createContext({})
 
 export const ContextVarialesProvider = ({children}) => {
 
-    const domain = 'http://localhost:2023'
-    // const domain = 'https://etms-backend-nine.vercel.app'
+    // const domain = 'http://localhost:2023'
+    const domain = 'https://etms-backend-nine.vercel.app'
     const [callReview, setCallReview] = useState(false)
     const [callTalk, setCallTalk] = useState(false)
     const [role, setRole] = useState(100)
