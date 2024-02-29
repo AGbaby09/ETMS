@@ -1,12 +1,15 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import './Profile.css'
 import axios from 'axios'
 import ContextVariales from '../../context/contextVariables'
 import AuthContext from "../../context/AuthProvider";
 
 const Profile = () => {
+    const [isLoading, setIsLoading] = useState(false)
     const {domain} = useContext(ContextVariales)
     const {auth} = useContext(AuthContext)
+
+    const [userProfile, setUserProfile] = useState({})
 
     const [fullname, setFullname] = useState('')
     const [editFullname, setEditFullname] = useState(false)
@@ -18,12 +21,31 @@ const Profile = () => {
     const [editPassword, setEditPassword] = useState(false)
 
     const submit = async (type, field) => {
+        setIsLoading(true)
         await axios.put(`${domain}/api/v1/edit/${type}`, {input:field, id:auth?.id})
         .then(response=>{
-            console.log(response)
+            setIsLoading(false)
+            setEditFullname(false)
+            setEditEmail(false)
+            setEditMobile(false)
+            setEditPassword(false)
         })
         .catch(error=>{console.log(error)})
     }
+
+    useEffect(()=>{
+        const getInfo = async () => {
+            await axios.post(`${domain}/api/v1/edit/getInfo`, {id: auth?.id})
+            .then(response=>{
+                if(response.data){
+                    setUserProfile(response.data)
+                }
+            })
+            .catch(error=>{console.log(error)})
+        }
+
+        getInfo()
+    }, [userProfile])
 
     return (
         <section id='Profile'>
@@ -40,13 +62,13 @@ const Profile = () => {
                             />
                         </div>
                         <div className="editButtons">
-                            <button className='center' type='submit'><i className="bx bx-check"></i> Save edit</button>
+                            {isLoading ? <button disabled className='center' type='submit'><i className="bx bx-check"></i> Saving</button> : <button className='center' type='submit'><i className="bx bx-check"></i> Save edit</button>}
                             <button className='center' onClick={(e)=>{e.preventDefault();setFullname('');setEditFullname(false)}}><i className="bx bx-x"></i> Cancel Edit</button>
                         </div>
                     </form>
                      : 
                     <>
-                        <h3>Fullname: <span>User name names</span></h3> 
+                        <h3>Fullname: <span>{userProfile.fullname ? userProfile.fullname : 'Loading...'}</span></h3> 
                         <button className='center' onClick={()=>{setEditFullname(true)}}>
                             Edit
                             <i className="bx bx-edit"></i>
@@ -56,7 +78,7 @@ const Profile = () => {
             </div>
             <div className="label">
                 {editEmail ? 
-                    <form onSubmit={()=>{submit('email', email)}}>
+                    <form onSubmit={(e)=>{e.preventDefault();submit('email', email)}}>
                         <div className="editForm">
                             <p>New Email:</p>
                             <input type="email" required
@@ -65,13 +87,13 @@ const Profile = () => {
                             />
                         </div>
                         <div className="editButtons">
-                            <button className='center' type='submit'><i className="bx bx-check"></i> Save edit</button>
+                            {isLoading ? <button disabled className='center' type='submit'><i className="bx bx-check"></i> Saving</button> : <button className='center' type='submit'><i className="bx bx-check"></i> Save edit</button>}
                             <button className='center' onClick={(e)=>{e.preventDefault();setEmail('');setEditEmail(false)}}><i className="bx bx-x"></i> Cancel Edit</button>
                         </div>
                     </form>
                      : 
                     <>
-                        <h3>Email: <span>example@email.com</span></h3> 
+                        <h3>Email: <span>{userProfile.email ? userProfile.email : 'Loading...'}</span></h3> 
                         <button className='center' onClick={()=>{setEditEmail(true)}}>
                             Edit
                             <i className="bx bx-edit"></i>
@@ -81,7 +103,7 @@ const Profile = () => {
             </div>
             <div className="label">
                 {editMobile ? 
-                    <form onSubmit={()=>{submit('mobile', mobile)}}>
+                    <form onSubmit={(e)=>{e.preventDefault();submit('mobile', mobile)}}>
                         <div className="editForm">
                             <p>New Mobile:</p>
                             <input type="text" required
@@ -90,13 +112,13 @@ const Profile = () => {
                             />
                         </div>
                         <div className="editButtons">
-                            <button className='center' type='submit'><i className="bx bx-check"></i> Save edit</button>
+                            {isLoading ? <button disabled className='center' type='submit'><i className="bx bx-check"></i> Saving</button> : <button className='center' type='submit'><i className="bx bx-check"></i> Save edit</button>}
                             <button className='center' onClick={(e)=>{e.preventDefault();setMobile('');setEditMobile(false)}}><i className="bx bx-x"></i> Cancel Edit</button>
                         </div>
                     </form>
                      : 
                     <>
-                        <h3>Mobile: <span>123456789</span></h3> 
+                        <h3>Mobile: <span>{userProfile.contact ? userProfile.contact : 'Loading...'}</span></h3> 
                         <button className='center' onClick={()=>{setEditMobile(true)}}>
                             Edit
                             <i className="bx bx-edit"></i>
@@ -106,7 +128,7 @@ const Profile = () => {
             </div>
             <div className="label">
                 {editPassword ? 
-                    <form onSubmit={()=>{submit('password', password)}}>
+                    <form onSubmit={(e)=>{e.preventDefault();submit('password', password)}}>
                         <div className="editForm">
                             <p>New Password:</p>
                             <input type="text" required
@@ -115,13 +137,13 @@ const Profile = () => {
                             />
                         </div>
                         <div className="editButtons">
-                            <button className='center' type='submit'><i className="bx bx-check"></i> Save edit</button>
+                            {isLoading ? <button disabled className='center' type='submit'><i className="bx bx-check"></i> Saving</button> : <button className='center' type='submit'><i className="bx bx-check"></i> Save edit</button>}
                             <button className='center' onClick={(e)=>{e.preventDefault();setPassword('');setEditPassword(false)}}><i className="bx bx-x"></i> Cancel Edit</button>
                         </div>
                     </form>
                      : 
                     <>
-                        <h3>Password: <span>********</span></h3> 
+                        <h3>Password: <span>{userProfile.password ? userProfile.password : 'Loading...'}</span></h3> 
                         <button className='center' onClick={()=>{setEditPassword(true)}}>
                             Edit
                             <i className="bx bx-edit"></i>
