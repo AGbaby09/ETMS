@@ -15,30 +15,12 @@ export const ContextVarialesProvider = ({children}) => {
     const [closeV, setCloseV] = useState(false)
     const [vData, setVData] = useState({})
     const [rData, setRData] = useState({})
-    const [totalE, setTotalE] = useState(0)
-    const [totalD, setTotalD] = useState(0)
-    const [totalV, setTotalV] = useState(0)
-
-    useEffect(()=>{
-        const fetchAllCounts = async () => {
-            await axios.get(`${domain}/api/v1/dashboard/countAll`)
-            .then(response => {
-                if(response.data){
-                    setTotalE(response.data.totalEmployees)
-                    setTotalD(response.data.totalDrivers)
-                    setTotalV(response.data.totalVehicles)
-                }
-            })
-            .catch(error=>{console.log(error)})
-        }
-
-        fetchAllCounts()
-    }, [totalD, totalE, totalV])
+    
     return (
         <ContextVariales.Provider value={{ 
             callReview, setCallReview, callTalk, setCallTalk, openRide, setOpenRide,
             role, setRole, domain, openV, setOpenV, vData, setVData, rData, setRData,
-            closeV, setCloseV, totalE, setTotalE, totalD, setTotalD, totalV, setTotalV
+            closeV, setCloseV
             }} >
             {children}
         </ContextVariales.Provider>

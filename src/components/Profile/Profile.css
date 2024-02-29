@@ -18,7 +18,7 @@
     display:flex;
     align-items: center;
     justify-content: space-between;
-    width: 50%;
+    width: 70%;
     height: 7%;
     margin-left: 5%;
 }
@@ -39,12 +39,52 @@
 .label button{
     background-color: #666;
     color: white;
-    width: 20%;
-    height: 50%;
+    width: 17%;
+    height: 70%;
     border-radius: 10px;
     font-size: 1.7vh;
 }
 
 button i{
     font-size: 2.2vh;
+}
+
+#Profile form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#Profile form .editForm{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+#Profile form .editForm p{
+    font-size: 1.7vh;
+    font-weight: 700;
+}
+#Profile form .editForm input{
+    height: 70%;
+    width: 70%;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    margin-left: 5%;
+    padding:0 5%;
+}
+#Profile form .editButtons{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#Profile form .editButtons button{
+    width: 40%;
+    height: 70%;
+    margin: auto;
+    font-size: 1.5vh;
 }

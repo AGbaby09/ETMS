@@ -3,12 +3,13 @@ import {Chart as ChartJS, defaults} from 'chart.js/auto';
 import {Bar, Doughnut, Line, Pie} from 'react-chartjs-2';
 
 import AuthContext from "../../context/AuthProvider";
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ContextVariales from '../../context/contextVariables';
+import axios from 'axios';
 
 const Dashboard = () => {
-    const {totalE, totalD, totalV} = useContext(ContextVariales)
+    const {domain} = useContext(ContextVariales)
 
     const {auth} = useContext(AuthContext)
 
@@ -19,6 +20,26 @@ const Dashboard = () => {
             navigate('/')
         }
     }, [auth])
+
+    const [totalE, setTotalE] = useState(0)
+    const [totalD, setTotalD] = useState(0)
+    const [totalV, setTotalV] = useState(0)
+
+    useEffect(()=>{
+        const fetchAllCounts = async () => {
+            await axios.get(`${domain}/api/v1/dashboard/countAll`)
+            .then(response => {
+                if(response.data){
+                    setTotalE(response.data.totalEmployees)
+                    setTotalD(response.data.totalDrivers)
+                    setTotalV(response.data.totalVehicles)
+                }
+            })
+            .catch(error=>{console.log(error)})
+        }
+
+        fetchAllCounts()
+    }, [totalD, totalE, totalV])
 
     
 
